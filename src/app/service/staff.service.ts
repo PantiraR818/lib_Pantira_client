@@ -10,6 +10,13 @@ export class StaffService {
   private url = `${environment.serviceUrl}/staff`
   constructor(private http: HttpClient) { }
 
+  login(login: any) {
+    return this.http.post<any>(`${this.url}/login`, login)
+      .pipe(map((res) => {
+        return res;
+      }));
+  }
+
   getstaffById(id: any) {
     console.log(id);
     let getUrl = `${this.url}/${id}`;
@@ -37,8 +44,10 @@ export class StaffService {
       }));
   }
 
-  deleteStaff(id: any){
+  deleteStaff(id: any) {
     let deleteUrl = `${this.url}/${id}`;
     return this.http.delete<any>(deleteUrl);
   }
+
+
 }

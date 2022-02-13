@@ -15,6 +15,7 @@ export class NewBookComponent implements OnInit {
 
   ngOnInit(): void {
     this.bookForm = new FormGroup({
+      book_id : new FormControl(),
       title : new FormControl(),
       author : new FormControl(),
       publisher : new FormControl(),
@@ -24,6 +25,7 @@ export class NewBookComponent implements OnInit {
 
   addBook(){
     let book = {
+      book_id: this.bookForm.value.book_id,
       title: this.bookForm.value.title,
       author: this.bookForm.value.author,
       publisher: this.bookForm.value.publisher,

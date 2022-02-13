@@ -1,16 +1,10 @@
 <div class="row mt-3">
-    <div class="h1">Add New Book</div>
+    <div class="h1">Edit Book</div>
   </div>
   <div class="row mt-3">
     <div class="col-md-12">
       <div class="container">
-        <form [formGroup]="bookForm" > 
-          <div class="mb-3 row">
-            <label for="name" class="col-sm-3 col-form-label">BookID</label>
-            <div class="col-sm-9">
-              <input type="text" class="form-control" formControlName="book_id" placeholder="BookID">
-            </div>
-          </div>
+        <form [formGroup]="bookForm" >   
           <div class="mb-3 row">
             <label for="name" class="col-sm-3 col-form-label">Title</label>
             <div class="col-sm-9">
@@ -37,7 +31,7 @@
           </div>
           <div class="mb-3 row">
             <div class="offset-sm-3 col-sm-10">
-              <button type="submit" class="btn btn-primary" (click)="addBook()">
+              <button type="submit" class="btn btn-primary" (click)="editBook()">
                 Save
               </button>
             </div>
